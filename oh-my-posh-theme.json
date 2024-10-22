@@ -1,0 +1,148 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "white": "#f7f7f7",
+    "black": "#111111"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "style": "plain",
+          "template": "\u250c",
+          "type": "text"
+        },
+        {
+          "background": "#464646",
+          "foreground": "p:white",
+          "properties": {
+            "windows": "\ue62a",
+            "linux": "\uf17c",
+            "ubuntu": "\uf31b",
+            "macos": "\uf179"
+          },
+          "style": "plain",
+          "template": " {{.Icon}}{{if .WSL}} (WSL){{end}}\u2800",
+          "type": "os"
+        },
+        {
+          "background": "p:white",
+          "foreground": "p:black",
+          "style": "plain",
+          "template": " \uf489 {{.Name}}\u2800",
+          "type": "shell"
+        },
+        {
+          "background": "#ffe093",
+          "foreground": "p:black",
+          "style": "plain",
+          "template": " \uf2c0 {{.HostName}}\ue0bd{{.UserName}}\u2800",
+          "type": "session"
+        },
+        {
+          "background": "#ffffd6",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFA500{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{ end }}",
+            "{{ if gt .Ahead 0 }}#89d1dc{{ end }}",
+            "{{ if gt .Behind 0 }}#c5b6ad{{ end }}"
+          ],
+          "foreground": "p:black",
+          "properties": {
+            "branch_ahead_icon": " \ue0a0 ",
+            "branch_behind_icon": "\u2193",
+            "branch_gone": "\u2262",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\u2713 ",
+            "commit_icon": "\u25b7 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "merge_icon": "\u25f4 ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\u2c62 ",
+            "tag_icon": "\u25b6 "
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} \u2502{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#f7f7f7",
+          "properties": {
+            "style": "austin",
+            "threshold": 0
+          },
+          "style": "plain",
+          "template": "{{.FormattedMs}}",
+          "type": "executiontime"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#f7f7f7",
+          "properties": {
+            "time_format": "02/01/06 15:04"
+          },
+          "style": "plain",
+          "template": "<p:white> · </>{{.CurrentDate | date .Format}}",
+          "type": "time"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_template": "<#93d0ff> \u00bb </>",
+            "home_icon": "\ueb06",
+            "style": "agnoster_full"
+          },
+          "style": "plain",
+          "template": "<p:white>\u2514</><#93d0ff>[</> {{.Path}} <#93d0ff>]</>",
+          "type": "path"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#f7f7f7",
+          "foreground_templates": [
+            "{{if gt .Code 0}}#ff3030{{end}}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f",
+          "type": "status"
+        }
+      ]
+    }
+  ],
+  "console_title_template": "{{if .Root}}[root] {{end}}{{.Shell}} in <{{.Folder}}>",
+  "final_space": true,
+  "version": 2
+}
