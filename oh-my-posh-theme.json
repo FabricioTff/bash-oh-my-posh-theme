@@ -45,6 +45,17 @@
           "type": "session"
         },
         {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:white",
+          "background": "transparent",
+          "template": " \uf820 {{.Venv}} ",
+          "properties": {
+            "display_venv": true,
+            "version": "off"
+          }
+        },
+        {
           "background": "#ffffd6",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFA500{{ end }}",
