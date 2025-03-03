@@ -49,7 +49,7 @@
           "style": "plain",
           "foreground": "p:white",
           "background": "#194B32",
-          "template": " \uf820 (venv) ",
+          "template": " \ue73c (venv) ",
           "properties": {
             "display_venv": true,
             "version": "off",
