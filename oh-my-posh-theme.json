@@ -49,7 +49,7 @@
           "style": "plain",
           "foreground": "p:white",
           "background": "#194B32",
-          "template": " \ue606 (venv) ",
+          "template": " \uec16 (venv) ",
           "properties": {
             "display_venv": true,
             "version": "off",
