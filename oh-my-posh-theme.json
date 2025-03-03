@@ -47,12 +47,13 @@
         {
           "type": "python",
           "style": "plain",
-          "foreground": "p:white",
-          "background": "transparent",
+          "foreground": "p:orange",
+          "background": "#ffe093",
           "template": " (\uf820 {{.Venv | base}}) ",
           "properties": {
             "display_venv": true,
-            "version": "off"
+            "version": "off",
+            "venv_path": "VIRTUAL_ENV"
           }
         },
         {
