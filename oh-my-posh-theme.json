@@ -49,7 +49,7 @@
           "style": "plain",
           "foreground": "p:white",
           "background": "transparent",
-          "template": " \uf820 {{.Venv}} ",
+          "template": " (\uf820 {{.Venv | base}}) ",
           "properties": {
             "display_venv": true,
             "version": "off"
